@@ -123,7 +123,7 @@ export const featuredProject = {
   raisedAmount: "PKR 4,850,000",
   goalAmount: "PKR 7,500,000",
   progressPercent: 65,
-  image: "/images/awfca/home/collective-wedding-program.jpg",
+  image: "/images/awfca/home/new-beginnings.jpg",
   href: "/projects/new-beginnings-program",
 };
 

@@ -16,7 +16,7 @@
 /* Slide viewport framing */
 .hero-slider__slide {
   position: relative;
-  min-height: 560px;
+  min-height: 660px;
   /* height: clamp(560px, 76vh, 700px); */
   width: 100%;
   display: flex;
