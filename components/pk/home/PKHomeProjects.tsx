@@ -1,0 +1,124 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Heart, Sparkles } from "lucide-react";
+import type { Program } from "@/types/cms";
+import { resolveProjectImage } from "@/lib/images";
+
+interface PKHomeProjectsProps {
+  programs: Program[];
+}
+
+export function PKHomeProjects({ programs }: PKHomeProjectsProps) {
+  const displayPrograms = programs.slice(0, 3);
+
+  return (
+    <section className="py-16 sm:py-24 bg-white border-y border-gray-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Verified Initiatives</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-primary tracking-tight">
+              Active Programs in Pakistan
+            </h2>
+            <p className="text-muted text-sm sm:text-base md:text-lg leading-relaxed">
+              Every project is 100% Zakat-eligible, scholar-supervised, and delivered directly to certified destitute families across Pakistan.
+            </p>
+          </div>
+
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-sm font-bold text-accent hover:text-accent-deep transition-colors shrink-0 group self-start md:self-end"
+          >
+            <span>View All Field Initiatives</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+
+        {/* 3-Column Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayPrograms.map((program) => {
+            const imageSrc = resolveProjectImage(
+              program.image_url || program.featured_image_url,
+              program.slug,
+              program.category
+            );
+            const summaryText = Array.isArray(program.summary)
+              ? program.summary[0]
+              : program.summary || "";
+
+            return (
+              <div
+                key={program.id || program.slug}
+                className="bg-white rounded-3xl overflow-hidden border border-gray-200/90 shadow-sm hover:shadow-xl hover:border-accent/40 transition-all duration-300 flex flex-col group"
+              >
+                {/* Image Container */}
+                <div className="relative w-full aspect-[16/11] bg-gray-900 overflow-hidden">
+                  <Image
+                    src={imageSrc}
+                    alt={program.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+
+                  {/* Top Badge: Category */}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary/85 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 uppercase tracking-wider">
+                      {program.category || "Field Program"}
+                    </span>
+                  </div>
+
+                  {/* Top Right: Zakat Eligible */}
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-white/95 backdrop-blur-md text-accent text-xs font-bold px-2.5 py-1 rounded-full shadow flex items-center gap-1">
+                      <Heart className="w-3 h-3 fill-accent" />
+                      <span>Zakat Eligible</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-display font-bold text-primary group-hover:text-accent transition-colors line-clamp-2">
+                      <Link href={`/projects/${program.slug}`}>
+                        {program.title}
+                      </Link>
+                    </h3>
+                    <p className="text-muted text-sm leading-relaxed line-clamp-3">
+                      {summaryText}
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+                    <Link
+                      href={`/donate?project=${program.slug}`}
+                      className="inline-flex items-center justify-center gap-1.5 bg-accent hover:bg-accent-deep text-white font-bold px-4 py-2.5 rounded-xl text-xs shadow-sm transition-all flex-1"
+                    >
+                      <Heart className="w-3.5 h-3.5 fill-white" />
+                      <span>Donate</span>
+                    </Link>
+
+                    <Link
+                      href={`/projects/${program.slug}`}
+                      className="inline-flex items-center justify-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-primary font-bold px-4 py-2.5 rounded-xl text-xs transition-colors flex-1"
+                    >
+                      <span>Learn More</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

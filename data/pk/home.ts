@@ -1,0 +1,152 @@
+export const heroSlides = [
+  {
+    id: 1,
+    title: "New Beginnings: Marriage Support for Deserving Couples",
+    urduTitle: "نئی شروعات: مستحق جوڑوں کے لیے باوقار ازدواجی امداد",
+    description: "Helping destitute young couples in Pakistan start married life with dignity by providing essential household packages under 100% Zakat Tamleek supervision.",
+    image: "/images/pk/hero/hero-wedding.jpg",
+    category: "Social Welfare",
+    categoryUrdu: "سوشل ویلفیئر",
+    donateUrl: "/donate",
+    learnMoreHref: "/projects/new-beginnings-program",
+  },
+  {
+    id: 2,
+    title: "Clean Water Treatment Plants & Solar Wells",
+    urduTitle: "صاف پینے کے پانی کی فراہمی اور سولر واٹر پمپس",
+    description: "Installing solar-powered reverse osmosis plants and deep bore wells in drought-hit villages across Sindh, South Punjab, and Balochistan.",
+    image: "/images/pk/hero/hero-clean-water.jpg",
+    category: "Clean Water",
+    categoryUrdu: "صاف پانی",
+    donateUrl: "/donate",
+    learnMoreHref: "/projects/clean-water-project",
+  },
+  {
+    id: 3,
+    title: "Student Scholarships: Educate a Child, Transform a Nation",
+    urduTitle: "تعلیمی وظائف: ایک بچے کی تعلیم، پورے خاندان کی خوشحالی",
+    description: "Providing deserving students with complete school tuition, books, and uniforms so poverty never cuts an education short.",
+    image: "/images/pk/hero/hero-education.jpg",
+    category: "Education",
+    categoryUrdu: "تعلیم و تربیت",
+    donateUrl: "/donate",
+    learnMoreHref: "/projects/student-scholarship-breaking-barriers-building-futures",
+  },
+  {
+    id: 4,
+    title: "Orphan Sponsorship & Comprehensive Care",
+    urduTitle: "یتیم بچوں کی کفالت اور جامع نگہداشت",
+    description: "Ensuring shelter, nutrition, healthcare, and educational mentorship for vulnerable orphans in remote and mountainous communities.",
+    image: "/images/pk/hero/hero-orphan-care.jpg",
+    category: "Orphan Care",
+    categoryUrdu: "یتیم کفالت",
+    donateUrl: "/donate",
+    learnMoreHref: "/projects/orphan-support-project",
+  },
+  {
+    id: 5,
+    title: "Food Packs & Emergency Relief Across Pakistan",
+    urduTitle: "فوڈ پیکجز اور ہنگامی امداد کی بلا تعطل فراہمی",
+    description: "Delivering essential ration kits, medical supplies, and winter relief packs directly to verified Mustahiq families facing extreme hardship.",
+    image: "/images/pk/hero/hero-food-relief.jpg",
+    category: "Emergency Relief",
+    categoryUrdu: "ہنگامی امداد",
+    donateUrl: "/donate",
+    learnMoreHref: "/projects/food-bank",
+  },
+];
+
+export const fallbackImpactStats = [
+  {
+    id: "districts",
+    key: "districts_reached",
+    label: "Districts Reached",
+    value: 24,
+    prefix: "",
+    suffix: "+",
+    description: "Serving vulnerable communities across all 4 provinces",
+  },
+  {
+    id: "beneficiaries",
+    key: "lives_impacted",
+    label: "Lives Impacted",
+    value: 250,
+    prefix: "",
+    suffix: "K+",
+    description: "Provided with food, medical aid, and clean water",
+  },
+  {
+    id: "weddings",
+    key: "weddings_supported",
+    label: "Families Supported",
+    value: 1750,
+    prefix: "",
+    suffix: "+",
+    description: "Through New Beginnings household starter packages",
+  },
+  {
+    id: "volunteers",
+    key: "volunteers_field",
+    label: "Active Field Volunteers",
+    value: 350,
+    prefix: "",
+    suffix: "+",
+    description: "On-ground relief network ensuring transparent delivery",
+  },
+];
+
+export const whyChooseUsItems = [
+  {
+    step: "01",
+    title: "100% Zakat Policy with Full Compliance",
+    description: "Every single rupee allocated for Zakat is strictly channeled into eligible heads under scholar supervision, never diluted for overheads.",
+    image: "/images/awfca/services/religious.jpg",
+  },
+  {
+    step: "02",
+    title: "Verified On-Ground Field Teams",
+    description: "We work directly through community coordinators in remote districts—inspecting genuine need before disbursement, ensuring dignity throughout.",
+    image: "/images/awfca/services/humanitarian.jpg",
+  },
+  {
+    step: "03",
+    title: "International Governance & Audit Standards",
+    description: "Backed by Arrahman Welfare Foundation Canada, bringing international accountability, detailed photographic reporting, and regular third-party audits to Pakistan.",
+    image: "/images/awfca/services/community.jpg",
+  },
+];
+
+export const featuredProject = {
+  title: "Collective Wedding Project",
+  category: "Social Welfare and Community Support",
+  summary: "Part of our New Beginnings project, the Collective Wedding initiative helps families celebrate special moments with dignity and community support, easing the financial burden of wedding expenses.",
+  raisedAmount: "PKR 4,850,000",
+  goalAmount: "PKR 7,500,000",
+  progressPercent: 65,
+  image: "/images/awfca/home/collective-wedding-program.jpg",
+  href: "/projects/new-beginnings-program",
+};
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Mohammad Ishaq",
+    role: "Community Elder, D.G. Khan",
+    quote: "During last summer's flash floods, AWF Pakistan volunteers were among the first to reach our remote village with dry ration packs and water purification kits. The transparency and care with which they served our people was truly exemplary.",
+    district: "Dera Ghazi Khan",
+  },
+  {
+    id: 2,
+    name: "Nasreen Bibi",
+    role: "Mother & Program Beneficiary",
+    quote: "Through the New Beginnings program, my daughter received a complete household package with utmost respect. AWF relieved our family of unbearable debt and allowed us to celebrate with immense happiness.",
+    district: "Faisalabad District",
+  },
+  {
+    id: 3,
+    name: "Tariq Mahmood",
+    role: "Donor & Zakat Giver, UAE",
+    quote: "Donating from Dubai to Pakistan has always carried concerns about whether funds truly reach the destitute. With AWF Pakistan's transparent updates and audit trail backed by AWF Canada, I give with complete peace of mind.",
+    district: "Overseas Donor (Dubai)",
+  },
+];

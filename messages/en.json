@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "team": "Our Team",
+    "faqs": "FAQs",
+    "reports": "Reports",
+    "blog": "Field Stories",
+    "contact": "Contact",
+    "donate": "Donate Now",
+    "allProjects": "View All Projects"
+  },
+  "announcement": {
+    "message": "Urgent Appeal: Support winter food packages and emergency medical relief across Pakistan districts.",
+    "action": "Donate Today"
+  },
+  "hero": {
+    "headline": "Delivering Hope & Dignity Across Pakistan",
+    "subtext": "Providing transparent, Zakat-eligible humanitarian aid, education scholarships, clean water, and emergency relief to underprivileged communities.",
+    "donateBtn": "Donate Now",
+    "projectsBtn": "Our Projects"
+  },
+  "sections": {
+    "impactTitle": "Our Verified Field Impact",
+    "impactEyebrow": "Measurable Change",
+    "whyChooseEyebrow": "Why Choose Us",
+    "whyChooseTitle": "Direct, Accountable & Compassionate Giving",
+    "featuredEyebrow": "Featured Initiative",
+    "testimonialsEyebrow": "Voices of Impact",
+    "testimonialsTitle": "Stories of Trust & Hope",
+    "zakatNoticeTitle": "100% Zakat Policy",
+    "zakatNoticeText": "Your Zakat is delivered directly to verified deserving families and students in full compliance with Islamic principles."
+  },
+  "footer": {
+    "tagline": "Building a Brighter, Resilient Future for Those in Need.",
+    "urduTagline": "ضرورت مند خاندانوں کے لیے ایک روشن اور باوقار مستقبل کی تعمیر۔",
+    "whatsappCta": "Donate via WhatsApp",
+    "quickLinks": "Quick Links",
+    "support": "Support & Legal",
+    "projects": "Our Projects",
+    "copyright": "© 2026 Arrahman Welfare Foundation Pakistan. All rights reserved. SECP Registered NPO."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "comingSoon": "Launching Soon",
+    "zakatEligible": "Zakat Eligible",
+    "activeInPK": "Active in Pakistan"
+  }
+}
