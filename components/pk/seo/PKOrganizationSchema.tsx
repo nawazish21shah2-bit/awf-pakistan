@@ -4,17 +4,20 @@ export function PKOrganizationSchema() {
     "@type": "NGO",
     "name": "Arrahman Welfare Foundation Pakistan",
     "alternateName": "AWF Pakistan",
-    "url": "https://arrahmanwelfare.org",
-    "logo": "https://arrahmanwelfare.org/images/logo-awfca.png",
-    "description": "Registered welfare organization in Pakistan providing Zakat-eligible food aid, educational scholarships, marriage support, and clean water.",
+    "url": "https://awf-pakistan.vercel.app",
+    "logo": "https://awf-pakistan.vercel.app/images/awf-logo.png",
+    "description": "Registered welfare organization in Pakistan (Reg. No. PB-7811715682944788) providing Zakat-eligible food aid, educational scholarships, marriage support, and clean water.",
+    "identifier": "PB-7811715682944788",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Office # 4B, Sector F-8/3",
-      "addressLocality": "Islamabad",
+      "streetAddress": "7-EIDGAH MARKET, KETCHEHRI ROAD, SADIQABAD",
+      "addressLocality": "Rahim Yar Khan",
+      "addressRegion": "Sadiqabad",
       "addressCountry": "PK"
     },
     "contactPoint": {
       "@type": "ContactPoint",
+      "email": "info@arrahmanwelfare.org",
       "telephone": "+92-300-0000000",
       "contactType": "donor support",
       "availableLanguage": ["English", "Urdu"]

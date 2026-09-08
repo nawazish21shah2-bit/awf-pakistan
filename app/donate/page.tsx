@@ -250,7 +250,7 @@ function DonateForm() {
                 <strong>IBAN:</strong> PK00MEZN0000000000000000
               </p>
               <p>
-                <strong>Branch:</strong> Islamabad Main Markaz Branch
+                <strong>Branch:</strong> Sadiqabad Branch, Rahim Yar Khan
               </p>
               <p className="text-accent font-semibold pt-1 border-t border-gray-200/60 mt-2">
                 Share payment receipt or screenshot on WhatsApp ({pkSite.phoneDisplay}) or submit the confirmation form

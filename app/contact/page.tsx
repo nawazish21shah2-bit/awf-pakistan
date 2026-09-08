@@ -100,8 +100,8 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5" />
               </div>
               <h3 className="font-display font-bold text-lg text-primary">Email Inquiries</h3>
-              <p className="text-sm text-muted">{pkSite.email}</p>
-              <p className="text-sm text-muted">{pkSite.supportEmail}</p>
+              <p className="text-sm text-muted font-medium">{pkSite.email}</p>
+              <p className="text-xs text-muted/80 pt-1">Official Donor & Support Desk</p>
             </div>
           </div>
 

@@ -66,7 +66,7 @@ export function PKFooter() {
                 <h4 className="font-display font-bold text-xl leading-tight">
                   {pkSite.name}
                 </h4>
-                <p className="text-xs text-white/60">SECP Licensed NPO</p>
+                <p className="text-xs text-white/60">Reg. No. {pkSite.registrationNo}</p>
               </div>
             </div>
 

@@ -56,7 +56,7 @@ export default function PaymentComingSoonPage() {
               <p><strong>Account Title:</strong> Arrahman Welfare Foundation Pakistan</p>
               <p><strong>Account Number:</strong> 0000-0000-0000-0000 (Placeholder)</p>
               <p><strong>IBAN:</strong> PK00MEZN0000000000000000 (Placeholder)</p>
-              <p><strong>Branch:</strong> F-8 Markaz Branch, Islamabad</p>
+              <p><strong>Branch:</strong> Sadiqabad Branch, Rahim Yar Khan</p>
             </div>
           </div>
 

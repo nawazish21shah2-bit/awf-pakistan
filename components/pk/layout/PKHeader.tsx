@@ -34,7 +34,7 @@ export function PKHeader() {
       <div className="hidden lg:block bg-primary-soft text-white/80 text-xs py-1.5 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <span className="text-white/60">SECP Reg. NPO | Backed by AWF Canada</span>
+            <span className="text-white/60">Reg. No. {pkSite.registrationNo} | Backed by AWF Canada</span>
             <a href={pkSite.phoneHref} className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
               <Phone className="w-3 h-3" />
               <span>{pkSite.phoneDisplay}</span>
