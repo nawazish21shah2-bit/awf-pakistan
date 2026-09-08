@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Education Scholarships",
     "SECP Registered NGO"
   ],
-  metadataBase: new URL("https://arrahmanwelfare.org"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://awf-pakistan.vercel.app"),
   alternates: {
     canonical: "/",
   },
@@ -54,18 +54,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PK",
-    url: "https://arrahmanwelfare.org",
+    url: "https://awf-pakistan.vercel.app",
     siteName: "Arrahman Welfare Foundation Pakistan",
     title: "Arrahman Welfare Foundation Pakistan | Delivering Hope & Dignity",
     description: "Zakat-eligible humanitarian aid, food packages, student scholarships, and clean water across deserving districts in Pakistan.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop",
+        url: "/images/pk/hero/hero-clean-water.jpg",
         width: 1200,
         height: 630,
-        alt: "Arrahman Welfare Foundation Pakistan",
+        alt: "Arrahman Welfare Foundation Pakistan | Solar Water Treatment & Community Aid",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arrahman Welfare Foundation Pakistan | Delivering Hope & Dignity",
+    description: "Zakat-eligible humanitarian aid, food packages, student scholarships, and clean water across deserving districts in Pakistan.",
+    images: ["/images/pk/hero/hero-clean-water.jpg"],
   },
 };
 
