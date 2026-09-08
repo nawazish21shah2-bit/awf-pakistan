@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Target, Eye, ArrowRight, Heart } from "lucide-react";
+import { Target, Eye, ArrowRight, Heart, Sparkles } from "lucide-react";
 
 export function PKHomeAbout() {
   return (
@@ -13,10 +13,10 @@ export function PKHomeAbout() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Left Side - Images Grid */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-lg">
+          <div className="lg:col-span-5 space-y-6">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <div className="relative h-64 sm:h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/awfca/home/food-bank.jpg"
                     alt="Food bank distribution"
@@ -25,7 +25,7 @@ export function PKHomeAbout() {
                     sizes="(max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
-                <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/awfca/home/education.jpg"
                     alt="Education support"
@@ -35,8 +35,8 @@ export function PKHomeAbout() {
                   />
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
-                <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden shadow-lg">
+              <div className="space-y-6 pt-12">
+                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/awfca/home/clean-water.jpg"
                     alt="Clean water project"
@@ -45,7 +45,7 @@ export function PKHomeAbout() {
                     sizes="(max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
-                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative h-64 sm:h-72 md:h-80 rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/awfca/home/new-beginnings.jpg"
                     alt="Wedding assistance program"
@@ -61,6 +61,10 @@ export function PKHomeAbout() {
           {/* Right Side - Content */}
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
+                <Sparkles className="w-4 h-4" />
+                <span>Who We Are</span>
+              </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary leading-tight">
                 Fighting Poverty with Compassion and Sustainable Support
               </h2>
