@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Heart, Phone, Mail } from "lucide-react";
@@ -64,8 +65,14 @@ export function PKHeader() {
           
           {/* Logo Left */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-              AWF
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-transform">
+              <Image
+                src="/images/awf-logo.png"
+                alt="AWF Pakistan Logo"
+                fill
+                className="object-contain"
+                sizes="48px"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-display text-lg font-bold text-white leading-none">
@@ -78,9 +85,9 @@ export function PKHeader() {
           </Link>
 
           {/* EN | UR Toggle Centre-Left */}
-          <div className="hidden sm:block">
+          {/* <div className="hidden sm:block">
             <PKLocaleToggle />
-          </div>
+          </div> */}
 
           {/* Navigation Links Right */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -155,7 +162,7 @@ export function PKHeader() {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 lg:hidden">
-            <PKLocaleToggle className="sm:hidden" />
+            {/* <PKLocaleToggle className="sm:hidden" /> */}
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}

@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Heart,
   Building2,
-  Sparkles,
   ShieldCheck,
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n/context";
@@ -85,7 +84,7 @@ export function PKWhyChooseUs() {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-            <Sparkles className="w-3.5 h-3.5" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
             <span>{t("sections.whyChooseEyebrow", "Trust & Accountability")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary tracking-tight">
@@ -149,10 +148,13 @@ export function PKWhyChooseUs() {
                   <span className="text-[11px] font-bold text-primary/70 bg-gray-50 px-2.5 py-1 rounded-md border border-gray-100">
                     {pillar.badge}
                   </span>
-                  <span className="text-xs font-bold text-accent opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  <Link
+                    href="/about"
+                    className="text-xs font-bold text-accent opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 hover:text-accent-deep"
+                  >
                     <span>Learn more</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </span>
+                  </Link>
                 </div>
               </div>
             );

@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   Users,
   FileCheck2,
-  Sparkles,
   ArrowRight,
   Eye,
   Target,
@@ -101,6 +100,7 @@ export default function AboutPage() {
           { label: "Home", href: "/" },
           { label: "About Us" },
         ]}
+        showLogoBackground={true}
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 space-y-20 sm:space-y-28">
@@ -109,7 +109,7 @@ export default function AboutPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
               <span>Our Story &amp; Motivation</span>
             </div>
 

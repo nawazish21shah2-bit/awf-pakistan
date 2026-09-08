@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Sparkles, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight } from "lucide-react";
 import type { Program } from "@/types/cms";
 import { resolveProjectImage } from "@/lib/images";
 import { featuredProject } from "@/data/pk/home";
@@ -23,7 +23,7 @@ export function PKProgramsSection({ programs }: PKProgramsSectionProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-4 h-4" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
             <span>Social Welfare & Community Support</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary tracking-tight">
@@ -40,7 +40,7 @@ export function PKProgramsSection({ programs }: PKProgramsSectionProps) {
           <div className="p-6 sm:px-10 sm:pt-8 pb-4 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-                <Sparkles className="w-3.5 h-3.5" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_0_3px_rgba(255,255,255,0.3)]" />
                 <span>Featured Initiative</span>
               </span>
               <span className="text-xs font-bold uppercase tracking-wider text-muted px-2 py-1 bg-gray-100 rounded-md">

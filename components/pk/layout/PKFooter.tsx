@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, ShieldCheck, MapPin, Phone, Mail } from "lucide-react";
 import { pkSite, footerQuickLinks, footerServices, footerSupport } from "@/data/pk/site";
@@ -52,11 +53,17 @@ export function PKFooter() {
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white font-bold text-lg">
-                AWF
+              <div className="relative w-24 h-24 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/awf-logo.png"
+                  alt="AWF Pakistan Logo"
+                  fill
+                  className="object-contain"
+                  sizes="96px"
+                />
               </div>
               <div>
-                <h4 className="font-display font-bold text-lg leading-tight">
+                <h4 className="font-display font-bold text-xl leading-tight">
                   {pkSite.name}
                 </h4>
                 <p className="text-xs text-white/60">SECP Licensed NPO</p>

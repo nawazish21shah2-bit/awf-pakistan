@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Target, Eye, ArrowRight, Heart, Sparkles } from "lucide-react";
+import { Target, Eye, ArrowRight, Heart } from "lucide-react";
 
 export function PKHomeAbout() {
   return (
@@ -62,7 +62,7 @@ export function PKHomeAbout() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-                <Sparkles className="w-4 h-4" />
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
                 <span>Who We Are</span>
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary leading-tight">

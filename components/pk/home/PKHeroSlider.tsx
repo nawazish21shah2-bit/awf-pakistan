@@ -112,7 +112,7 @@ export function PKHeroSlider() {
                       {isUrdu ? "الرحمٰن ویلفیئر فاؤنڈیشن" : "AWF PAKISTAN"}
                     </span>
                     <span className="hero-slider__brand-divider" aria-hidden="true" />
-                    <span className="hero-slider__brand-full">
+                    <span className="hero-slider__brand-full hidden md:block">
                       {isUrdu ? "پاکستان مشن" : "Arrahman Welfare Foundation"}
                     </span>
                   </div>
