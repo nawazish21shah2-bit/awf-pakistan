@@ -51,12 +51,13 @@ export default function PaymentComingSoonPage() {
               <span>Bank Transfer Account Details (Pakistan)</span>
             </div>
 
-            <div className="space-y-1.5 text-xs sm:text-sm text-muted">
-              <p><strong>Bank:</strong> Meezan Bank Ltd. (Islamic Banking)</p>
-              <p><strong>Account Title:</strong> Arrahman Welfare Foundation Pakistan</p>
-              <p><strong>Account Number:</strong> 0000-0000-0000-0000 (Placeholder)</p>
-              <p><strong>IBAN:</strong> PK00MEZN0000000000000000 (Placeholder)</p>
-              <p><strong>Branch:</strong> Sadiqabad Branch, Rahim Yar Khan</p>
+            <div className="space-y-2 text-xs sm:text-sm text-muted">
+              <p><strong>Bank:</strong> {pkSite.bankDetails.bankName} (Islamic Banking)</p>
+              <p><strong>Account Title:</strong> {pkSite.bankDetails.accountTitle}</p>
+              <p><strong>Account Number:</strong> <span className="font-mono font-bold text-primary">{pkSite.bankDetails.accountNumber}</span></p>
+              <p><strong>IBAN:</strong> <span className="font-mono font-bold text-primary">{pkSite.bankDetails.ibanFormatted}</span></p>
+              <p><strong>Branch &amp; Code:</strong> {pkSite.bankDetails.branchName} (Code: <span className="font-mono font-bold text-primary">{pkSite.bankDetails.branchCode}</span>)</p>
+              <p><strong>SWIFT / BIC:</strong> <span className="font-mono font-bold text-primary">{pkSite.bankDetails.swiftCode}</span> (International Wire)</p>
             </div>
           </div>
 

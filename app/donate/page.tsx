@@ -13,6 +13,8 @@ import {
   AlertCircle,
   Loader2,
   Send,
+  Copy,
+  Check,
 } from "lucide-react";
 import { pkSite } from "@/data/pk/site";
 import { PKPageHero } from "@/components/pk/layout/PKPageHero";
@@ -52,6 +54,15 @@ function DonateForm() {
   const [submittingNotice, setSubmittingNotice] = useState(false);
   const [noticeSubmitted, setNoticeSubmitted] = useState(false);
   const [noticeError, setNoticeError] = useState<string | null>(null);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const handleCopy = (text: string, field: string) => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText(text);
+      setCopiedField(field);
+      setTimeout(() => setCopiedField(null), 2000);
+    }
+  };
 
   const projectTitle = projectParam
     ? projectParam
@@ -236,26 +247,149 @@ function DonateForm() {
               </button>
             </div>
 
-            <div className="bg-surface p-5 sm:p-6 rounded-2xl border border-gray-200 space-y-2.5 text-xs sm:text-sm text-muted">
-              <p>
-                <strong>Bank Name:</strong> Meezan Bank Ltd. (Islamic Banking)
-              </p>
-              <p>
-                <strong>Account Title:</strong> Arrahman Welfare Foundation Pakistan
-              </p>
-              <p>
-                <strong>Account Number:</strong> 0000-0000-0000-0000
-              </p>
-              <p>
-                <strong>IBAN:</strong> PK00MEZN0000000000000000
-              </p>
-              <p>
-                <strong>Branch:</strong> Sadiqabad Branch, Rahim Yar Khan
-              </p>
-              <p className="text-accent font-semibold pt-1 border-t border-gray-200/60 mt-2">
-                Share payment receipt or screenshot on WhatsApp ({pkSite.phoneDisplay}) or submit the confirmation form
-                below for instant official acknowledgment.
-              </p>
+            <div className="bg-surface rounded-2xl border border-gray-200 p-5 sm:p-6 space-y-4">
+              {/* Header: Bank Name & Account Title */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-gray-200">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-muted block mb-0.5">
+                    Bank Name
+                  </span>
+                  <div className="text-base font-bold text-primary">
+                    {pkSite.bankDetails.bankName}
+                  </div>
+                  <span className="inline-block text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md mt-1">
+                    Islamic Banking
+                  </span>
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-muted block mb-0.5">
+                    Account Title
+                  </span>
+                  <div className="text-base font-bold text-primary">
+                    {pkSite.bankDetails.accountTitle}
+                  </div>
+                  <span className="inline-block text-[11px] font-medium text-muted mt-1">
+                    Official Charity Account
+                  </span>
+                </div>
+              </div>
+
+              {/* Account Numbers & Transfer Details */}
+              <div className="space-y-3">
+                {/* IBAN */}
+                <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">
+                      IBAN (All Banks &amp; Raast Transfers)
+                    </span>
+                    <span className="font-mono font-bold text-primary text-sm sm:text-base tracking-wide">
+                      {pkSite.bankDetails.ibanFormatted}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleCopy(pkSite.bankDetails.iban, "iban")}
+                    className="inline-flex items-center gap-1.5 self-start sm:self-auto px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-primary transition-colors cursor-pointer"
+                  >
+                    {copiedField === "iban" ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        <span className="text-emerald-700">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5 text-muted" />
+                        <span>Copy IBAN</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Account Number & Branch Code */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 flex items-center justify-between gap-2 shadow-sm">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">
+                        Account Number
+                      </span>
+                      <span className="font-mono font-bold text-primary text-sm sm:text-base">
+                        {pkSite.bankDetails.accountNumber}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(pkSite.bankDetails.accountNumber, "account")}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-primary transition-colors cursor-pointer"
+                    >
+                      {copiedField === "account" ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="text-emerald-700">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5 text-muted" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 flex items-center justify-between gap-2 shadow-sm">
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">
+                        Branch &amp; Branch Code
+                      </span>
+                      <span className="font-semibold text-primary text-xs sm:text-sm block">
+                        {pkSite.bankDetails.branchName}
+                      </span>
+                      <span className="text-[11px] text-muted">
+                        Branch Code: <strong className="font-mono text-primary">{pkSite.bankDetails.branchCode}</strong>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SWIFT / International wire */}
+                <div className="bg-white p-3.5 rounded-xl border border-gray-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-sm">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-muted block">
+                      SWIFT / BIC Code (For Overseas &amp; International Wire)
+                    </span>
+                    <span className="font-mono font-bold text-primary text-sm sm:text-base">
+                      {pkSite.bankDetails.swiftCode}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleCopy(pkSite.bankDetails.swiftCode, "swift")}
+                    className="inline-flex items-center gap-1.5 self-start sm:self-auto px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-100 hover:bg-gray-200 text-primary transition-colors cursor-pointer"
+                  >
+                    {copiedField === "swift" ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        <span className="text-emerald-700">Copied!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5 text-muted" />
+                        <span>Copy SWIFT</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              {/* Instructions */}
+              <div className="pt-2 border-t border-gray-200/80 text-xs text-muted">
+                <p>
+                  Share payment receipt or screenshot on WhatsApp (
+                  <a href={pkSite.whatsappHref} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
+                    {pkSite.phoneDisplay}
+                  </a>
+                  ) or submit the confirmation form below for instant official acknowledgment.
+                </p>
+              </div>
             </div>
 
             {/* Interactive Bank Transfer Notification Form */}

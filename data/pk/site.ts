@@ -22,6 +22,16 @@ export const pkSite = {
   province: "Punjab",
   description: "Arrahman Welfare Foundation Pakistan delivers Zakat-eligible food aid, educational scholarships, healthcare support, and clean water across deserving districts in Pakistan. Backed by AWF Canada.",
   copyright: `© ${new Date().getFullYear()} Arrahman Welfare Foundation Pakistan. All rights reserved.`,
+  bankDetails: {
+    bankName: "Meezan Bank Limited",
+    accountTitle: "Arrahman Welfare Foundation",
+    accountNumber: "0114365057",
+    iban: "PK85MEZN0019010114365057",
+    ibanFormatted: "PK85 MEZN 0019 0101 1436 5057",
+    branchCode: "1901",
+    branchName: "Main Bazar Branch, Sadiqabad",
+    swiftCode: "MEZNPKKA",
+  },
 };
 
 export const mainNav = [
