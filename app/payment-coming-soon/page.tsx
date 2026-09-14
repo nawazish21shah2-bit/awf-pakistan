@@ -73,7 +73,7 @@ export default function PaymentComingSoonPage() {
               className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-deep text-white font-bold px-8 py-3.5 rounded-full shadow-lg transition-all text-sm"
             >
               <MessageCircle className="w-5 h-5 fill-white" />
-              <span>Send Receipt via WhatsApp (+92 300 0000000)</span>
+              <span>Send Receipt via WhatsApp ({pkSite.whatsapp})</span>
             </a>
           </div>
         </div>

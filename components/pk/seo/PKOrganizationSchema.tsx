@@ -1,3 +1,5 @@
+import { pkSite } from "@/data/pk/site";
+
 export function PKOrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -18,7 +20,7 @@ export function PKOrganizationSchema() {
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@arrahmanwelfare.org",
-      "telephone": "+92-300-0000000",
+      "telephone": pkSite.phone,
       "contactType": "donor support",
       "availableLanguage": ["English", "Urdu"]
     },

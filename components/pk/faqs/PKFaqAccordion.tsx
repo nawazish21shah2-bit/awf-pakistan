@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { Search, ChevronDown, HelpCircle, MessageCircle, Mail, Sparkles, X, CheckCircle2 } from "lucide-react";
 import type { FaqItem, FaqCategory } from "@/types/cms";
 import Link from "next/link";
+import { pkSite } from "@/data/pk/site";
 
 interface PKFaqAccordionProps {
   initialFaqs: FaqItem[];
@@ -339,7 +340,7 @@ export function PKFaqAccordion({ initialFaqs, categories }: PKFaqAccordionProps)
 
           <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
             <a
-              href="https://wa.me/923000000000"
+              href={pkSite.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-deep text-white font-bold text-sm transition-all shadow-lg shadow-accent/20"

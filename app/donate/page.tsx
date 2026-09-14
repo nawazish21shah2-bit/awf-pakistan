@@ -477,7 +477,7 @@ function DonateForm() {
                           type="tel"
                           value={donorPhone}
                           onChange={(e) => setDonorPhone(e.target.value)}
-                          placeholder="+92 300 0000000"
+                          placeholder="+92 332 7240914"
                           className="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs bg-white focus:ring-1 focus:ring-accent outline-none"
                         />
                       </div>

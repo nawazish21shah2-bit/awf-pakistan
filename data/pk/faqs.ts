@@ -8,7 +8,9 @@ export const pkFaqs = [
   {
     id: "gulf-donations",
     question: "Can donors in the UAE, Saudi Arabia, and the Gulf donate in AED or SAR?",
-    answer: "Yes. We facilitate cross-border contributions from Gulf donors through direct international wire transfer to our designated PKR bank accounts, as well as via our Gulf representative on WhatsApp (+971 50 0000000).",
+    // Gulf WhatsApp reference commented out for now:
+    // answer: "Yes. We facilitate cross-border contributions from Gulf donors through direct international wire transfer to our designated PKR bank accounts, as well as via our Gulf representative on WhatsApp (+971 50 0000000).",
+    answer: "Yes. We facilitate cross-border contributions from Gulf donors through direct international wire transfer to our designated PKR bank accounts.",
     category: "Donations & Currencies",
   },
   {

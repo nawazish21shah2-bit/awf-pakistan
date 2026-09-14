@@ -84,7 +84,9 @@ export default function ContactPage() {
               </div>
               <h3 className="font-display font-bold text-lg text-primary">WhatsApp Helpline</h3>
               <p className="text-sm text-muted">Pakistan: {pkSite.phoneDisplay}</p>
+              {/* Gulf Representative commented out for now:
               <p className="text-sm text-muted">Gulf Representative: +971 50 0000000</p>
+              */}
               <a
                 href={pkSite.whatsappHref}
                 target="_blank"
@@ -196,7 +198,7 @@ export default function ContactPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+92 300 0000000"
+                      placeholder="+92 332 7240914"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent text-sm"
                     />
                   </div>

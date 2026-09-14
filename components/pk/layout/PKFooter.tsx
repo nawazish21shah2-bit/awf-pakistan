@@ -17,7 +17,7 @@ export function PKFooter() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="space-y-1">
             <h3 className="text-xl md:text-2xl font-display font-bold text-white">
-              Direct Giving via WhatsApp in Pakistan & Gulf
+              Direct Giving via WhatsApp in Pakistan
             </h3>
             <p className="text-white/90 text-sm max-w-2xl">
               Connect directly with our authorized team for bank account details, Zakat calculations, and immediate confirmation receipts.
@@ -34,14 +34,16 @@ export function PKFooter() {
               <MessageCircle className="w-5 h-5 fill-white" />
               <span>{t("footer.whatsappCta", "Donate via WhatsApp")}</span>
             </a>
+            {/* Gulf WhatsApp commented out for now:
             <a
-              href={pkSite.gulfWhatsappHref}
+              href={(pkSite as any).gulfWhatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-4 py-3 rounded-full backdrop-blur-md transition-colors text-sm"
             >
               <span>Gulf Donors (+971)</span>
             </a>
+            */}
           </div>
         </div>
       </div>
