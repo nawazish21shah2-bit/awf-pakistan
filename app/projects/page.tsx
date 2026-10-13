@@ -46,8 +46,8 @@ export default async function ProjectsPage({ searchParams }: Props) {
       {/* Page Hero Header */}
       <section className="relative py-16 sm:py-20 bg-primary text-white overflow-hidden">
         {/* Background glow and subtle pattern */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[#242f45] to-primary opacity-90" />
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B10D13_1px,transparent_1px)] [background-size:20px_20px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-soft to-primary opacity-90" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-accent)_1px,transparent_1px)] [background-size:20px_20px]" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent-soft px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">

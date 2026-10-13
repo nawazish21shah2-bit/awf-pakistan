@@ -4,6 +4,7 @@ import { I18nProvider } from "@/lib/i18n/context";
 import { PKAnnouncementBar } from "@/components/pk/layout/PKAnnouncementBar";
 import { PKHeader } from "@/components/pk/layout/PKHeader";
 import { PKFooter } from "@/components/pk/layout/PKFooter";
+import { ColorCustomizer } from "@/components/pk/layout/ColorCustomizer";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -96,6 +97,7 @@ export default function RootLayout({
             {children}
           </main>
           <PKFooter />
+          <ColorCustomizer />
         </I18nProvider>
       </body>
     </html>

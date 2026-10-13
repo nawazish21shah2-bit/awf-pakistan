@@ -84,7 +84,7 @@ export function PKWhyChooseUs() {
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(var(--color-accent-rgb),0.3)]" />
             <span>{t("sections.whyChooseEyebrow", "Trust & Accountability")}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary tracking-tight">
@@ -112,7 +112,7 @@ export function PKWhyChooseUs() {
                 <div className="space-y-4 relative z-10">
                   {/* Icon & Badge */}
                   <div className="flex items-center justify-between">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/20 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-sm">
+                    <div className="w-14 h-14 rounded-2xl bg-white border-2 border-accent/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:border-primary group-hover:text-white group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 shadow-sm">
                       <IconComponent className="w-7 h-7" />
                     </div>
                   </div>

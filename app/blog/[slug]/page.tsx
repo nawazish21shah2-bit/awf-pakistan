@@ -84,7 +84,7 @@ export default async function BlogDetailPage({ params }: Props) {
     <div className="min-h-screen bg-[#fafbfc]">
       {/* Dynamic Hero Header */}
       <section className="relative py-16 sm:py-24 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-[#1b2436]/90 to-primary/95 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary-soft/90 to-primary/95 z-10" />
         {post.image_url && (
           <Image
             src={post.image_url}
@@ -150,7 +150,7 @@ export default async function BlogDetailPage({ params }: Props) {
             
             {/* Featured Image */}
             {post.image_url && (
-              <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-slate-900 border border-gray-200/80 shadow-soft">
+              <div className="relative aspect-[16/9] w-full rounded-3xl overflow-hidden bg-gray-900 border border-gray-200/80 shadow-soft">
                 <Image
                   src={post.image_url}
                   alt={post.title}

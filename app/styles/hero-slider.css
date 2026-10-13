@@ -85,7 +85,7 @@
   width: min(45vw, 600px);
   height: min(45vw, 600px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(177, 13, 19, 0.22), transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 70%);
   pointer-events: none;
 }
 
@@ -120,8 +120,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  background: rgba(177, 13, 19, 0.25);
-  border: 1px solid rgba(177, 13, 19, 0.5);
+  background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
   backdrop-filter: blur(10px);
   color: #ffffff;
   padding: 0.35rem 0.95rem;
@@ -137,8 +137,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #B10D13;
-  box-shadow: 0 0 8px #B10D13;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
   animation: badge-pulse 2s infinite ease-in-out;
 }
 
@@ -228,22 +228,22 @@
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  background: #B10D13;
+  background: var(--color-accent);
   color: #ffffff !important;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.85rem 1.85rem;
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 24px rgba(177, 13, 19, 0.4);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--color-accent) 40%, transparent);
   transition: all 0.25s ease-out;
   text-decoration: none;
 }
 
 .hero-slider__btn-primary:hover {
-  background: #940a0e;
+  background: var(--color-accent-deep);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(177, 13, 19, 0.55);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--color-accent) 55%, transparent);
 }
 
 .hero-slider__btn-secondary {
@@ -290,10 +290,10 @@
 }
 
 .hero-slider__nav:hover {
-  background: #B10D13;
-  border-color: #B10D13;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 8px 25px rgba(177, 13, 19, 0.45);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--color-accent) 45%, transparent);
 }
 
 .hero-slider__nav--prev {
@@ -344,8 +344,8 @@
 .hero-slider__dot--active {
   width: 26px;
   height: 9px;
-  background: #B10D13;
-  box-shadow: 0 0 10px rgba(177, 13, 19, 0.8);
+  background: var(--color-accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent) 80%, transparent);
 }
 
 /* Responsive Styles */

@@ -196,7 +196,7 @@ export function PKFaqAccordion({ initialFaqs, categories }: PKFaqAccordionProps)
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 bg-white overflow-hidden ${
                   isOpen
-                    ? "border-accent/40 shadow-md ring-1 ring-accent/10"
+                    ? "border-accent/40 shadow-md ring-accent/10"
                     : "border-gray-200/90 shadow-sm hover:border-accent/30 hover:shadow"
                 }`}
               >
@@ -322,7 +322,7 @@ export function PKFaqAccordion({ initialFaqs, categories }: PKFaqAccordionProps)
       </div>
 
       {/* Still Have Questions Contact Box */}
-      <div className="bg-gradient-to-br from-primary via-[#242f45] to-primary rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-br from-primary via-primary-soft to-primary rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">

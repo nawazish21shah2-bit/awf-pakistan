@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable no-unused-vars */
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import enMessages from "@/messages/en.json";
@@ -8,8 +9,8 @@ export type Locale = "en" | "ur";
 
 interface I18nContextType {
   locale: Locale;
-  setLocale: (loc: Locale) => void;
-  t: (path: string, fallback?: string) => string;
+  setLocale: (_loc: Locale) => void;
+  t: (_path: string, _fallback?: string) => string;
   isUrdu: boolean;
 }
 
@@ -32,6 +33,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     const saved = localStorage.getItem("awf_pk_locale") as Locale;
     if (saved === "en" || saved === "ur") {
       setLocaleState(saved);
+      if (typeof document !== "undefined") {
+        document.documentElement.lang = saved;
+        document.documentElement.dir = saved === "ur" ? "rtl" : "ltr";
+      }
     }
   }, []);
 
@@ -39,6 +44,10 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     setLocaleState(newLocale);
     localStorage.setItem("awf_pk_locale", newLocale);
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`;
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = newLocale;
+      document.documentElement.dir = newLocale === "ur" ? "rtl" : "ltr";
+    }
   };
 
   const t = (path: string, fallback = ""): string => {

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MessageCircle, ShieldCheck, MapPin, Phone, Mail } from "lucide-react";
 import { pkSite, footerQuickLinks, footerServices, footerSupport } from "@/data/pk/site";
 import { useI18n } from "@/lib/i18n/context";
+import { PKLocaleToggle } from "./PKLocaleToggle";
 
 export function PKFooter() {
   const { t } = useI18n();
@@ -51,11 +52,11 @@ export function PKFooter() {
       {/* Main Footer Body */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          
+
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-24 h-24 rounded-xl overflow-hidden">
+              <div className="relative w-24 h-24 rounded-full overflow-hidden shrink-0 shadow-sm">
                 <Image
                   src="/images/awf-logo.png"
                   alt="AWF Pakistan Logo"
@@ -101,7 +102,11 @@ export function PKFooter() {
               {footerQuickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="hover:text-white hover:underline transition-colors">
-                    {link.label}
+                    {"labelKey" in link && typeof link.labelKey === "string"
+                      ? t(link.labelKey, link.labelKey)
+                      : "label" in link
+                        ? (link as { label: string }).label
+                        : link.href}
                   </Link>
                 </li>
               ))}
@@ -159,7 +164,8 @@ export function PKFooter() {
         {/* Bottom Legal bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50 text-center md:text-left">
           <p>{t("footer.copyright", pkSite.copyright)}</p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap items-center gap-4 justify-center">
+            {/* <PKLocaleToggle className="scale-90" /> */}
             {footerSupport.slice(2).map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-white/80 transition-colors">
                 {item.label}

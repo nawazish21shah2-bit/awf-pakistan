@@ -10,9 +10,9 @@ export function PKInternationalBridge() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-br from-primary via-[#242f45] to-primary text-white p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-br from-primary via-primary-soft to-primary text-white p-8 sm:p-12 md:p-14 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B10D13_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-accent)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5">

@@ -15,7 +15,7 @@ export const heroSlides = [
     title: "Clean Water Treatment Plants & Solar Wells",
     urduTitle: "صاف پینے کے پانی کی فراہمی اور سولر واٹر پمپس",
     description: "Installing solar-powered reverse osmosis plants and deep bore wells in drought-hit villages across Sindh, South Punjab, and Balochistan.",
-    image: "/images/pk/hero/hero-clean-water.jpg",
+    image: "/images/pk/hero/hero-clean-water.webp",
     category: "Clean Water",
     categoryUrdu: "صاف پانی",
     donateUrl: "/donate",

@@ -483,6 +483,19 @@ function DonateForm() {
                       </div>
                     </div>
 
+                    <div>
+                      <label className="block text-[11px] font-bold text-primary uppercase mb-1">
+                        Note / Project Designation (Optional)
+                      </label>
+                      <input
+                        type="text"
+                        value={donorNote}
+                        onChange={(e) => setDonorNote(e.target.value)}
+                        placeholder="e.g. Zakat, Ration Drive, Orphan Care"
+                        className="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs bg-white focus:ring-1 focus:ring-accent outline-none"
+                      />
+                    </div>
+
                     <button
                       type="submit"
                       disabled={submittingNotice}

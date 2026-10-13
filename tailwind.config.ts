@@ -10,15 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         background: "#fafbfc",
-        foreground: "#1b2436",
+        foreground: "var(--color-primary)",
         primary: {
-          DEFAULT: "#1b2436",
-          soft: "#2a354c",
+          DEFAULT: "var(--color-primary)",
+          soft: "var(--color-primary-soft)",
         },
         accent: {
-          DEFAULT: "#B10D13",
-          deep: "#940a0e",
-          soft: "#dc2626",
+          DEFAULT: "var(--color-accent)",
+          deep: "var(--color-accent-deep)",
+          soft: "var(--color-accent-soft)",
         },
         muted: "#374151",
         surface: {
@@ -32,8 +32,8 @@ const config: Config = {
         urdu: ["var(--font-noto-urdu)", "Noto Nastaliq Urdu", "serif"],
       },
       boxShadow: {
-        soft: "0 18px 50px rgba(27, 36, 54, 0.08)",
-        glow: "0 8px 30px rgba(177, 13, 19, 0.15)",
+        soft: "0 18px 50px color-mix(in srgb, var(--color-primary) 8%, transparent)",
+        glow: "0 8px 30px color-mix(in srgb, var(--color-accent) 15%, transparent)",
       },
       borderRadius: {
         sm: "8px",

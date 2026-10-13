@@ -40,7 +40,7 @@ export function PKDonationBanner() {
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-deep text-white font-bold px-7 py-3.5 rounded-full shadow-glow transition-transform hover:scale-105 active:scale-95 text-sm"
               >
                 <Heart className="w-4 h-4 fill-white" />
-                <span>Calculate & Donate Now</span>
+                <span>Donate Now</span>
               </Link>
 
               <a

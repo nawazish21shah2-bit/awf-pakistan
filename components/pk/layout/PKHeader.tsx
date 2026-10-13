@@ -5,9 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Heart, Phone, Mail } from "lucide-react";
-import { PKLocaleToggle } from "./PKLocaleToggle";
 import { pkSite, mainNav } from "@/data/pk/site";
 import { useI18n } from "@/lib/i18n/context";
+import { PKLocaleToggle } from "./PKLocaleToggle";
 import { cn } from "@/lib/cn";
 
 export function PKHeader() {
@@ -57,37 +57,33 @@ export function PKHeader() {
         className={cn(
           "transition-all duration-300 border-b",
           scrolled
-            ? "bg-primary/95 backdrop-blur-md border-white/10 shadow-lg py-3"
+            ? "bg-white/95 backdrop-blur-md border-gray-200 shadow-lg py-3"
             : "bg-primary border-white/10 py-4"
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          
+
           {/* Logo Left */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-md group-hover:scale-105 transition-transform">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-sm group-hover:scale-105 transition-transform">
               <Image
                 src="/images/awf-logo.png"
                 alt="AWF Pakistan Logo"
                 fill
                 className="object-contain"
                 sizes="48px"
+                priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-lg font-bold text-white leading-none">
+              <span className={cn("font-display text-lg font-bold leading-none", scrolled ? "text-gray-900" : "text-white")}>
                 AWF Pakistan
               </span>
-              <span className="text-[10px] tracking-wider uppercase text-white/70 font-semibold mt-0.5">
+              <span className={cn("text-[10px] tracking-wider uppercase font-semibold mt-0.5", scrolled ? "text-gray-600" : "text-white/70")}>
                 Arrahman Welfare Foundation
               </span>
             </div>
           </Link>
-
-          {/* EN | UR Toggle Centre-Left */}
-          {/* <div className="hidden sm:block">
-            <PKLocaleToggle />
-          </div> */}
 
           {/* Navigation Links Right */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -108,7 +104,13 @@ export function PKHeader() {
                       href={item.href}
                       className={cn(
                         "inline-flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                        isActive ? "text-white bg-white/10" : "text-white/80 hover:text-white hover:bg-white/5"
+                        scrolled
+                          ? isActive
+                            ? "text-gray-900 bg-gray-100"
+                            : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                          : isActive
+                            ? "text-white bg-white/10"
+                            : "text-white/80 hover:text-white hover:bg-white/5"
                       )}
                     >
                       <span>{label}</span>
@@ -117,12 +119,12 @@ export function PKHeader() {
 
                     {activeDropdown === item.href && (
                       <div className="absolute top-full left-0 w-64 pt-2 z-50">
-                        <div className="bg-primary-soft border border-white/15 rounded-xl shadow-2xl p-2 space-y-1 backdrop-blur-xl">
+                        <div className={cn("border rounded-xl shadow-2xl p-2 space-y-1 backdrop-blur-xl", scrolled ? "bg-white border-gray-200" : "bg-primary-soft border-white/15")}>
                           {item.children?.map((sub) => (
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              className="block px-3 py-2 text-sm rounded-lg text-white/80 hover:text-white hover:bg-accent/80 transition-colors"
+                              className={cn("block px-3 py-2 text-sm rounded-lg transition-colors", scrolled ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100" : "text-white/80 hover:text-white hover:bg-accent/80")}
                             >
                               {'label' in sub ? sub.label : t((sub as any).labelKey || '', '')}
                             </Link>
@@ -140,7 +142,13 @@ export function PKHeader() {
                   href={item.href}
                   className={cn(
                     "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                    isActive ? "text-white bg-white/10" : "text-white/80 hover:text-white hover:bg-white/5"
+                    scrolled
+                      ? isActive
+                        ? "text-gray-900 bg-gray-100"
+                        : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                      : isActive
+                        ? "text-white bg-white/10"
+                        : "text-white/80 hover:text-white hover:bg-white/5"
                   )}
                 >
                   {label}
@@ -149,8 +157,9 @@ export function PKHeader() {
             })}
           </nav>
 
-          {/* Donate Button (Accent) Far Right */}
+          {/* Donate Button & Language Toggle Far Right */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* <PKLocaleToggle scrolled={scrolled} /> */}
             <Link
               href="/donate"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-deep text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-glow transition-all hover:scale-105 active:scale-95"
@@ -162,11 +171,11 @@ export function PKHeader() {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 lg:hidden">
-            {/* <PKLocaleToggle className="sm:hidden" /> */}
+            <PKLocaleToggle scrolled={scrolled} />
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 rounded-lg text-white hover:bg-white/10"
+              className={cn("p-2 rounded-lg transition-colors", scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10")}
               aria-label="Toggle Navigation"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -207,7 +216,11 @@ export function PKHeader() {
             ))}
           </div>
 
-          <div className="pt-6">
+          <div className="pt-6 space-y-3">
+            {/* <div className="flex items-center justify-between py-2.5 px-4 bg-white/5 rounded-xl border border-white/10">
+              <span className="text-sm font-medium text-white/80">Language / زبان</span>
+              <PKLocaleToggle />
+            </div> */}
             <Link
               href="/donate"
               className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-bold py-3.5 rounded-xl shadow-lg"

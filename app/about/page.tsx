@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ShieldCheck,
-  Award,
   Building2,
   Globe,
   Heart,
@@ -109,7 +108,7 @@ export default function AboutPage() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(var(--color-accent-rgb),0.3)]" />
               <span>Our Story &amp; Motivation</span>
             </div>
 
@@ -254,9 +253,9 @@ export default function AboutPage() {
         </section>
 
         {/* 5. Strategic Partnership with AWF Canada */}
-        <section className="bg-gradient-to-br from-primary via-[#242f45] to-primary text-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden">
+        <section className="bg-gradient-to-br from-primary via-primary-soft to-primary text-white rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B10D13_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-accent)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-8 space-y-5">

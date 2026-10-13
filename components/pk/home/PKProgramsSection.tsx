@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ArrowRight } from "lucide-react";
+import { Heart, ArrowRight, CheckCircle2 } from "lucide-react";
 import type { Program } from "@/types/cms";
 import { resolveProjectImage } from "@/lib/images";
 import { featuredProject } from "@/data/pk/home";
@@ -23,7 +23,7 @@ export function PKProgramsSection({ programs }: PKProgramsSectionProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(var(--color-accent-rgb),0.3)]" />
             <span>Social Welfare & Community Support</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-primary tracking-tight">
@@ -54,7 +54,7 @@ export function PKProgramsSection({ programs }: PKProgramsSectionProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Image Showcase */}
-            <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-[400px] bg-slate-950 overflow-hidden">
+            <div className="relative w-full aspect-[16/10] lg:aspect-auto lg:h-[400px] bg-gray-900 overflow-hidden">
               <Image
                 src={featuredProject.image}
                 alt={featuredProject.title}
@@ -77,39 +77,30 @@ export function PKProgramsSection({ programs }: PKProgramsSectionProps) {
                 </p>
               </div>
 
-              {/* Progress Bar */}
-              <div className="space-y-3">
-                <div className="flex justify-between text-xs sm:text-sm font-bold text-primary">
-                  <span>Raised: <span className="text-accent">{featuredProject.raisedAmount}</span></span>
-                  <span className="text-muted">Goal: {featuredProject.goalAmount}</span>
+              {/* Key Points */}
+              <div className="space-y-2.5 pt-2">
+                <div className="flex items-start gap-2.5 text-sm text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <span>Complete wedding essentials for brides</span>
                 </div>
-                <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden border border-gray-200">
-                  <div
-                    className="h-full bg-accent rounded-full transition-all duration-1000"
-                    style={{ width: `${featuredProject.progressPercent}%` }}
-                  />
+                <div className="flex items-start gap-2.5 text-sm text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <span>Dignity-focused collective ceremonies</span>
                 </div>
-                <p className="text-xs text-muted">
-                  {featuredProject.progressPercent}% of target reached across target districts in Punjab & Sindh.
-                </p>
+                <div className="flex items-start gap-2.5 text-sm text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                  <span>100% Zakat-eligible support</span>
+                </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              {/* CTA */}
+              <div className="pt-2">
                 <Link
                   href="/donate?project=new-beginnings-program"
-                  className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-deep text-white font-bold px-6 py-3.5 rounded-full shadow-glow transition-all hover:scale-105 active:scale-95 text-sm flex-1"
+                  className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-deep text-white font-bold px-6 py-3.5 rounded-full shadow-glow transition-all hover:scale-105 active:scale-95 text-sm"
                 >
                   <Heart className="w-4 h-4 fill-white" />
                   <span>Sponsor a Wedding Kit</span>
-                </Link>
-
-                <Link
-                  href={featuredProject.href}
-                  className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-primary font-semibold px-6 py-3.5 rounded-full transition-colors text-sm flex-1"
-                >
-                  <span>Read Full Case Study</span>
-                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

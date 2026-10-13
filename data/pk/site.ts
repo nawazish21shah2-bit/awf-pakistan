@@ -64,13 +64,13 @@ export const mainNav = [
 ];
 
 export const footerQuickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Projects in Pakistan", href: "/projects" },
-  { label: "Field Stories & News", href: "/blog" },
-  { label: "Our Team", href: "/team" },
-  { label: "Reports & Audits", href: "/reports" },
-  { label: "Donate", href: "/donate" },
+  { labelKey: "nav.home", href: "/" },
+  { labelKey: "nav.about", href: "/about" },
+  { labelKey: "nav.projects", href: "/projects" },
+  { labelKey: "nav.blog", href: "/blog" },
+  { labelKey: "nav.team", href: "/team" },
+  { labelKey: "nav.reports", href: "/reports" },
+  { labelKey: "nav.donate", href: "/donate" },
 ];
 
 export const footerServices = [

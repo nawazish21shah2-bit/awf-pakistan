@@ -86,7 +86,7 @@ export function PKProgramGallery({ title, images }: PKProgramGalleryProps) {
       {/* Interactive Fullscreen Lightbox Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex flex-col justify-between p-4 sm:p-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[9999] bg-black/95 flex flex-col justify-between p-4 sm:p-6 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-label={`${title} image gallery`}

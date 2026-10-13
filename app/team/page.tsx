@@ -41,8 +41,8 @@ export default async function TeamPage() {
     <div className="min-h-screen bg-[#fafbfc]">
       {/* Page Hero Header */}
       <section className="relative py-16 sm:py-24 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-[#242f45] to-primary opacity-95" />
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B10D13_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-soft to-primary opacity-95" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-accent)_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent-soft px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">

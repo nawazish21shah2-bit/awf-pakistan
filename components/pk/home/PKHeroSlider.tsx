@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
 import { Heart, ArrowUpRight } from "lucide-react";
 import { heroSlides } from "@/data/pk/home";
 import { useI18n } from "@/lib/i18n/context";
@@ -35,12 +34,7 @@ function ArrowRightIcon() {
 export function PKHeroSlider() {
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(null);
   const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
   const { isUrdu, t } = useI18n();
-
-  const onSlideChange = useCallback((swiper: SwiperType) => {
-    setActiveIndex(swiper.realIndex);
-  }, []);
 
   return (
     <section
@@ -73,7 +67,6 @@ export function PKHeroSlider() {
           bulletClass: "hero-slider__dot",
           bulletActiveClass: "hero-slider__dot--active",
         }}
-        onSlideChange={onSlideChange}
       >
         {heroSlides.map((slide, index) => (
           <SwiperSlide key={slide.id || index}>

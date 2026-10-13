@@ -6,10 +6,18 @@
 :root {
   --font-manrope: 'Manrope', system-ui, sans-serif;
   --font-fraunces: 'Fraunces', Georgia, serif;
+
+  /* Color scheme variables - will be set by customizer */
+  --color-primary: #004d00;
+  --color-primary-soft: #006600;
+  --color-accent: #10b981;
+  --color-accent-deep: #059669;
+  --color-accent-soft: #34d399;
+  --color-accent-rgb: 16, 185, 129;
 }
 
 body {
-  color: #1b2436;
+  color: var(--color-primary);
   background: #fafbfc;
   font-family: var(--font-manrope);
   -webkit-font-smoothing: antialiased;
@@ -17,16 +25,16 @@ body {
 
 /* Islamic Geometric Pattern Background */
 .islamic-pattern {
-  background-color: #1b2436;
-  background-image: radial-gradient(#B10D13 0.75px, transparent 0.75px), radial-gradient(#2a354c 0.75px, #1b2436 0.75px);
+  background-color: var(--color-primary);
+  background-image: radial-gradient(var(--color-accent) 0.75px, transparent 0.75px), radial-gradient(var(--color-primary-soft) 0.75px, var(--color-primary) 0.75px);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
 }
 
 /* Subtle Warm Card Pattern */
 .bg-warm-mesh {
-  background: radial-gradient(circle at 10% 20%, rgba(177, 13, 19, 0.05) 0%, transparent 40%),
-              radial-gradient(circle at 90% 80%, rgba(27, 36, 54, 0.05) 0%, transparent 45%),
+  background: radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--color-accent) 5%, transparent) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--color-primary) 5%, transparent) 0%, transparent 45%),
               #fafbfc;
 }
 

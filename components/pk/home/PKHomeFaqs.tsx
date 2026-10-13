@@ -54,7 +54,7 @@ export function PKHomeFaqs({ faqs }: PKHomeFaqsProps) {
                 key={faq.id}
                 className={`rounded-2xl border transition-all duration-200 bg-white overflow-hidden ${
                   isOpen
-                    ? "border-accent/40 shadow-md ring-1 ring-accent/10"
+                    ? "border-accent/90 shadow-md  ring-accent/10"
                     : "border-gray-200/90 shadow-sm hover:border-accent/30 hover:shadow"
                 }`}
               >

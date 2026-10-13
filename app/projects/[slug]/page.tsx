@@ -84,8 +84,8 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-[#fafbfc]">
       {/* Page Hero Header with Dynamic Background */}
-      <section className="relative py-16 sm:py-24 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-[#1b2436]/90 to-primary/95 z-10" />
+      <section className="relative py-16 sm:py-24 bg-primary text-white overflow-hidden z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary-soft/90 to-primary/95 z-0" />
         <Image
           src={heroImage}
           alt={project.title}
@@ -93,8 +93,8 @@ export default async function ProjectDetailPage({ params }: Props) {
           className="object-cover opacity-20"
           priority
         />
-        
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+
+        <div className="relative z-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-accent font-bold text-xs uppercase tracking-widest">
             AWF Pakistan Field Initiatives
           </p>
@@ -131,8 +131,8 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
           {/* Column 1: Images & Photo Gallery (5 cols on Desktop) */}
-          <div className="lg:col-span-6 space-y-6 lg:sticky lg:top-28">
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-slate-900 border border-gray-200/80 shadow-soft group">
+          <div className="lg:col-span-6 space-y-6 lg:sticky lg:top-28 z-10">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-gray-900 border border-gray-200/80 shadow-soft group">
               <Image
                 src={heroImage}
                 alt={project.title}

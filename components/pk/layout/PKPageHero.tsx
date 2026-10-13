@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export interface BreadcrumbItem {
@@ -24,15 +23,14 @@ export function PKPageHero({
   breadcrumbs,
   children,
   className = "",
-  showLogoBackground = false,
 }: PKPageHeroProps) {
   return (
     <section
       className={`relative py-16 sm:py-24 bg-primary text-white overflow-hidden ${className}`}
     >
       {/* Background glow and subtle brand pattern */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-[#242f45] to-primary opacity-90 pointer-events-none" />
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#B10D13_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-soft to-primary opacity-90 pointer-events-none" />
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(var(--color-accent)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
       {/* Logo Background */}
       {/* {showLogoBackground && (
@@ -52,7 +50,7 @@ export function PKPageHero({
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         {badge && (
           <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent-soft px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(177,13,19,0.3)]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_0_3px_rgba(var(--color-accent-rgb),0.3)]" />
             <span>{badge}</span>
           </div>
         )}
