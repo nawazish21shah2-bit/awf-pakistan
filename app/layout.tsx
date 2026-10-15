@@ -5,6 +5,7 @@ import { PKAnnouncementBar } from "@/components/pk/layout/PKAnnouncementBar";
 import { PKHeader } from "@/components/pk/layout/PKHeader";
 import { PKFooter } from "@/components/pk/layout/PKFooter";
 import { ColorCustomizer } from "@/components/pk/layout/ColorCustomizer";
+import { PKOrganizationSchema } from "@/components/pk/seo/PKOrganizationSchema";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -74,6 +75,9 @@ export const metadata: Metadata = {
     description: "Zakat-eligible humanitarian aid, food packages, student scholarships, and clean water across deserving districts in Pakistan.",
     images: ["/images/pk/hero/hero-clean-water.jpg"],
   },
+  verification: {
+    google: "O8q4DigpTOdmdD2YbrCNdW9wxSgSW9BnwCSZTd2PrdA",
+  },
 };
 
 export default function RootLayout({
@@ -84,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" className={`${manrope.variable} ${fraunces.variable} ${notoUrdu.variable} h-full`}>
       <body className="min-h-full flex flex-col font-sans antialiased text-foreground bg-background">
+        <PKOrganizationSchema />
         <I18nProvider>
           <a
             href="#content"
