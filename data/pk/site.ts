@@ -17,7 +17,7 @@ export const pkSite = {
   // gulfWhatsappHref: "https://wa.me/971500000000?text=Assalam-o-Alaikum%2C%20I%20am%20donating%20from%20the%20Gulf%20region%20for%20AWF%20Pakistan.",
   email: "info@arrahmanwelfare.org",
   supportEmail: "info@arrahmanwelfare.org",
-  address: "7-EIDGAH MARKET, KETCHEHRI ROAD, SADIQABAD, Rahim Yar Khan, Sadiqabad",
+  address: "7-EIDGAH MARKET, KETCHEHRI ROAD, SADIQABAD, Rahim Yar Khan",
   city: "Sadiqabad",
   district: "Rahim Yar Khan",
   province: "Punjab",

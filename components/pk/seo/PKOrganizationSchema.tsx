@@ -12,9 +12,9 @@ export function PKOrganizationSchema() {
     "identifier": "PB-7811715682944788",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "7-EIDGAH MARKET, KETCHEHRI ROAD, SADIQABAD",
-      "addressLocality": "Rahim Yar Khan",
-      "addressRegion": "Sadiqabad",
+      "streetAddress": "7-EIDGAH MARKET, KETCHEHRI ROAD",
+      "addressLocality": pkSite.city,
+      "addressRegion": `${pkSite.district}, ${pkSite.province}`,
       "addressCountry": "PK"
     },
     "contactPoint": {
