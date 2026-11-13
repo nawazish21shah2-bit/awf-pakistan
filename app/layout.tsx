@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Fraunces, Noto_Nastaliq_Urdu } from "next/font/google";
 import { I18nProvider } from "@/lib/i18n/context";
-import { PKAnnouncementBar } from "@/components/pk/layout/PKAnnouncementBar";
 import { PKHeader } from "@/components/pk/layout/PKHeader";
 import { PKFooter } from "@/components/pk/layout/PKFooter";
 import { ColorCustomizer } from "@/components/pk/layout/ColorCustomizer";
@@ -96,7 +95,6 @@ export default function RootLayout({
           >
             Skip to content
           </a>
-          <PKAnnouncementBar />
           <PKHeader />
           <main id="content" className="flex-1">
             {children}

@@ -66,7 +66,7 @@ export function PKFooter() {
                 />
               </div>
               <div>
-                <h4 className="font-display font-bold text-xl leading-tight">
+                <h4 className="font-display font-bold text-xl leading-tight text-white">
                   {pkSite.name}
                 </h4>
                 <p className="text-xs text-white/60">Reg. No. {pkSite.registrationNo}</p>

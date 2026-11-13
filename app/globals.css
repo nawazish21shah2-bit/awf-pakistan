@@ -17,10 +17,31 @@
 }
 
 body {
-  color: var(--color-primary);
+  color: #1a2b1a;
   background: #fafbfc;
   font-family: var(--font-manrope);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Ensure readable text on white/light backgrounds */
+p, li, span, td, th, label {
+  color: inherit;
+}
+
+/* Better heading contrast on white backgrounds */
+h1, h2, h3, h4, h5, h6 {
+  color: #0f1f0f;
+}
+
+/* Urdu/Arabic text rendering */
+[lang="ur"], .font-urdu {
+  font-family: var(--font-noto-urdu), "Noto Nastaliq Urdu", serif;
+  font-size: 1.1em;
+  line-height: 2;
+  direction: rtl;
+  text-align: right;
 }
 
 /* Islamic Geometric Pattern Background */

@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         background: "#fafbfc",
-        foreground: "var(--color-primary)",
+        foreground: "#1a2b1a",
         primary: {
           DEFAULT: "var(--color-primary)",
           soft: "var(--color-primary-soft)",
@@ -20,7 +20,7 @@ const config: Config = {
           deep: "var(--color-accent-deep)",
           soft: "var(--color-accent-soft)",
         },
-        muted: "#374151",
+        muted: "#4b5563",
         surface: {
           DEFAULT: "#f2f4f7",
           warm: "#eef1f5",

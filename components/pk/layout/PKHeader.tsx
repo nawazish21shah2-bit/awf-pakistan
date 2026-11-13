@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Heart, Phone, Mail } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, Phone, Mail, HeartHandshake } from "lucide-react";
 import { pkSite, mainNav } from "@/data/pk/site";
 import { useI18n } from "@/lib/i18n/context";
 import { PKLocaleToggle } from "./PKLocaleToggle";
@@ -15,6 +15,7 @@ export function PKHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const { t } = useI18n();
 
   useEffect(() => {
@@ -29,28 +30,40 @@ export function PKHeader() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 w-full">
-      {/* Top Bar for contact & trust */}
-      <div className="hidden lg:block bg-primary-soft text-white/80 text-xs py-1.5 border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="text-white/60">Reg. No. {pkSite.registrationNo} | Backed by AWF Canada</span>
-            <a href={pkSite.phoneHref} className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-              <Phone className="w-3 h-3" />
-              <span>{pkSite.phoneDisplay}</span>
-            </a>
-            <a href={`mailto:${pkSite.email}`} className="hover:text-white inline-flex items-center gap-1.5 transition-colors">
-              <Mail className="w-3 h-3" />
-              <span>{pkSite.email}</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="text-accent-soft font-semibold">100% Zakat Policy</span>
-            <span className="text-white/40">•</span>
-            <span className="text-white/70">Zakat & Sadaqah Verified</span>
+    <header className="sticky top-0 z-50 w-full">
+      {/* Announcement Bar — hidden when mobile drawer is open */}
+      {!announcementDismissed && !mobileOpen && (
+        <div className="relative bg-primary text-white border-b border-white/10 py-2 sm:py-2.5 px-3 sm:px-4 text-xs md:text-sm">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
+            <div className="flex-1 flex flex-col sm:flex-row items-center justify-center text-center gap-1.5 sm:gap-2.5 pe-7 sm:pe-0">
+              <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 leading-relaxed">
+                <span className="inline-flex items-center gap-1 bg-accent text-white px-2 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold shadow-sm shrink-0">
+                  <HeartHandshake className="w-3.5 h-3.5" />
+                  <span>{t("announcement.badge", "Appeal")}</span>
+                </span>
+                <span className="text-white/90 font-medium">
+                  {t("announcement.message", "Urgent Appeal: Support winter food packages and emergency medical relief across Pakistan districts.")}
+                </span>
+                <Link
+                  href="/donate"
+                  className="inline-flex items-center gap-1.5 font-bold text-red-300 hover:text-white underline underline-offset-2 transition-colors shrink-0 text-xs"
+                >
+                  <span>{t("announcement.action", "Donate Today")}</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setAnnouncementDismissed(true)}
+              className="absolute end-2 top-2 sm:static text-white/70 hover:text-white p-1 rounded-md hover:bg-white/10 transition-colors shrink-0"
+              aria-label="Dismiss banner"
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Navbar */}
       <div
@@ -171,7 +184,7 @@ export function PKHeader() {
 
           {/* Mobile Actions */}
           <div className="flex items-center gap-2 lg:hidden">
-            <PKLocaleToggle scrolled={scrolled} />
+            {/* <PKLocaleToggle scrolled={scrolled} /> */}
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -185,26 +198,54 @@ export function PKHeader() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer - full screen overlay, no header bleed-through */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[73px] bottom-0 bg-primary/95 backdrop-blur-xl border-t border-white/10 p-6 overflow-y-auto z-50 flex flex-col justify-between">
-          <div className="space-y-4">
+        <div className="lg:hidden fixed inset-0 bg-primary z-[60] flex flex-col overflow-hidden">
+          {/* Drawer top bar with logo + close button */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0">
+            <Link href="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
+              <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-sm">
+                <Image
+                  src="/images/awf-logo.png"
+                  alt="AWF Pakistan"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-display text-lg font-bold text-white leading-none">AWF Pakistan</span>
+                <span className="text-[10px] tracking-wider uppercase font-semibold mt-0.5 text-white/70">Arrahman Welfare Foundation</span>
+              </div>
+            </Link>
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              className="text-white hover:bg-white/10 p-2 rounded-lg transition-colors"
+              aria-label="Close Navigation"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Nav links */}
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-1">
             {mainNav.map((item) => (
-              <div key={item.href} className="border-b border-white/10 pb-3">
+              <div key={item.href}>
                 <Link
                   href={item.href}
-                  className="block text-lg font-semibold text-white hover:text-accent transition-colors"
+                  className="block py-3 text-lg font-semibold text-white hover:text-accent transition-colors border-b border-white/10"
                   onClick={() => setMobileOpen(false)}
                 >
                   {t(item.labelKey, item.labelKey)}
                 </Link>
                 {item.children && (
-                  <div className="pl-4 mt-2 space-y-2">
+                  <div className="pl-4 py-2 space-y-2">
                     {item.children.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block text-sm text-white/70 hover:text-white"
+                        className="block py-1.5 text-sm font-medium text-white/70 hover:text-white transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
                         {'label' in sub ? sub.label : t((sub as any).labelKey || '', '')}
@@ -216,17 +257,14 @@ export function PKHeader() {
             ))}
           </div>
 
-          <div className="pt-6 space-y-3">
-            {/* <div className="flex items-center justify-between py-2.5 px-4 bg-white/5 rounded-xl border border-white/10">
-              <span className="text-sm font-medium text-white/80">Language / زبان</span>
-              <PKLocaleToggle />
-            </div> */}
+          {/* Bottom donate button */}
+          <div className="px-5 pb-8 pt-4 shrink-0 border-t border-white/10">
             <Link
               href="/donate"
-              className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-bold py-3.5 rounded-xl shadow-lg"
+              className="w-full inline-flex items-center justify-center gap-2 bg-accent text-white font-bold py-4 rounded-xl shadow-lg text-base"
               onClick={() => setMobileOpen(false)}
             >
-              <Heart className="w-4 h-4 fill-white" />
+              <Heart className="w-5 h-5 fill-white" />
               <span>{t("nav.donate", "Donate Now")}</span>
             </Link>
           </div>
